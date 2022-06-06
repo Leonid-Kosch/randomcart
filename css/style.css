@@ -1,0 +1,188 @@
+*{
+    transition: all 0.3s;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/bg.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bg 10s linear infinite;
+}
+@keyframes bg{
+    0%{
+        background-position: center center;
+    }
+    25%{
+        background-position: center right;
+    }
+    50%{
+        background-position:center center;
+    }
+    75%{
+        background-position: center left;
+    }
+    100%{
+        background-position: center center;
+    }
+}
+.container{
+    max-width: 600px;
+    width: 50%;
+    padding: 35px 40px 32px 40px;
+    background: #FFFFFF;
+    border: 10px solid #FFFFFF;
+    box-shadow: 0px 0px 20px 10px #FFFFFF;
+    border-radius: 20px;
+    background-image: url(../img/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: 675px 675px;
+    background-position: center;
+    position: fixed;
+}
+.container_hidden{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+h1{
+    font-size: 48px;
+    line-height: 71px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px #3984FF;
+    font-family: 'Stalinist One', cursive;
+}
+.username{
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #3984FF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background: #FFFFFF;
+    border: 1px solid #3984FF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 14px 20px;
+    max-width: 498px;
+    width: 100%;
+    margin: 27px 0 21px 0;
+}
+input::placeholder{
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #3984FF;
+}
+input:focus{
+    box-shadow: 0 0 20px 5px #3984FF;
+}
+button{
+    background: #3984FF;
+    border: 1px solid #3984FF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 263px;
+    display: block;
+    margin: 0 auto;
+    padding: 14px 14px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+button:hover{
+    background-color: #1b5ac0;
+    box-shadow: 0 10px 10px white;
+}
+button:active{
+    transform: scale(0.95);
+    box-shadow: 0 5px 5px #fff;
+}
+h2 {
+    font-size: 56px;
+    line-height: 64px;
+    color: #39AAC2;
+    font-family: Arial;
+    text-align: center;
+    margin-top: 30px;
+}
+.gameBox{
+    background: #C9F4FE;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    overflow-y: auto;
+}
+.gamebox_show{
+    visibility: visible;
+    opacity: 1;
+}
+.gamebox__container {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 700px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    perspective: 900px;
+    pointer-events: none;
+}
+.item {
+    background: #39AAC2;
+    border-radius: 10px;
+    max-width: 225px;
+    max-height: 206px;
+    position: relative;
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
+.back {
+    position: absolute;
+    background: #39AAC2;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+.item:hover {
+    cursor: pointer;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.404);
+}
+.front {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg) translate(50%, -50%);
+}
+img {
+    height: 90%;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: all;
+}
+.flip {
+    transform: rotateY(180deg);
+}
+p{
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
